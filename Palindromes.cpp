@@ -10,7 +10,40 @@ using namespace std;
 
 int main() {
 
-  cout << "Hello World!" << endl;
+  //get user input and account for null characters
+  bool isGoodSoFar = true;
+  char str[80];
+  char str2[80];
+  cout << "Welcome to Palindromes! Enter input: " << endl;
+  cin.get(str, 80);
+  cin.get();
+  int length = strlen(str);
+  
+  cout << length << endl;
+
+  
+  //format input to all lower case 
+  for (int i = 0; i < length; i++){
+    str[i] = tolower(str[i]);
+ 
+    //ALLY REMOVE ALL SPACES HERE!! LOOK AT ME !! HERE!
+  }
+
+  //reverse string
+  int count = length;
+  for (int j = 0; j < length; j++){
+    str2[j] = str[count-1]; //count = length, so -1 writes array backwards
+    count--;
+  }
+
+  //compare strings using strcmp()
+  if (strcmp(str, str2) == 0){
+    cout << "This is a Palindrome!" << endl;
+  } else {
+    cout << "This is not a Palindrome." << endl;
+  }
+  
+  
 
 
 
@@ -23,14 +56,10 @@ Program:
 cout welcome messages
 create a bool about isGoodSoFar
 cin a character array
+formulate input (delete spaces,  make to lowercase)
 
-for loop to put it in an array, watch for null characters to find length
-for i in range of 0-length-1 separate for loop to create a second array
-for i in range length-1 to 0, write new array 
-for i in range of 0-length-1, compare slot a of array 1 to slot a of array 2
-^ inside this for loop, if equal, set isGoodSoFar to true, else set to false
-
-if isGoodSoFar is true, cout palindrome
+for i in range strlen to 0, write new array (backwards) 
+strcomp(the 2 strings)
 else cout not a palindrome
 
  */
