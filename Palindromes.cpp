@@ -26,7 +26,12 @@ int main() {
   for (int i = 0; i < length; i++){
     str[i] = tolower(str[i]);
  
-    //ALLY REMOVE ALL SPACES HERE!! LOOK AT ME !! HERE!
+    //Remove spaces, shift each element following to the left if space delete
+    if (str[i] == 32){ // 32 = ASCII space
+
+    // ALLY! THIS IS NOT DONE!! YOU NEED TO MAKE 2 COUNTER VARIABLES
+      // TO FIX THE SPACES BUG! ALSO REWRITE TO A NEW STRING!!
+    }
   }
 
   //reverse string
@@ -42,24 +47,8 @@ int main() {
   } else {
     cout << "This is not a Palindrome." << endl;
   }
-  
-  
-
-
-
-  return 0;
+   
+ return 0;
 }
 
 
-/*
-Program: 
-cout welcome messages
-create a bool about isGoodSoFar
-cin a character array
-formulate input (delete spaces,  make to lowercase)
-
-for i in range strlen to 0, write new array (backwards) 
-strcomp(the 2 strings)
-else cout not a palindrome
-
- */
