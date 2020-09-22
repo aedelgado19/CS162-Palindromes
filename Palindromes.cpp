@@ -14,24 +14,22 @@ int main() {
 
   char str[80];//original str
   char str2[80]; //will be backwards of original str
-  int length = strlen(str);
   char newStr[80]; //str formatted w/o spaces and all lower case
   cout << "Welcome to Palindromes! Enter input: " << endl;
   cin.get(str, 80);
   cin.get();
-
+  int length = strlen(str);
+  
   int c = 0; //counter variable
 
   //handle input (delete spaces, punctuation, etc)
   for (int i = 0; i < length; i++){
     if (isValid(str[i])){ //check if character is alphanumeric
-      if (str[i] != 32){ //32 is ascii space
 	newStr[c] = str[i];
 	c++;
-      }
-
     }
   }
+
   //format input to all lower case 
   for (int j = 0; j < c; j++){
     newStr[j] = tolower(newStr[j]);
@@ -39,16 +37,16 @@ int main() {
   length = c; //save c to variable length before it gets changed
   
   //reverse string
-  for (int k = 0; k < c; k++){
+  for (int k = 0; k < length; k++){
     str2[k] = newStr[c-1]; //c = length, so -1 writes array backwards
     c--;
   }
 
-  //compare strings using strcmp()
+  //compare strings using memcmp()
   if (memcmp(newStr, str2, length) == 0){ //compare memory
-    cout << "This is a Palindrome!" << endl;
+    cout << "Palindrome." << endl;
   } else {
-    cout << "This is not a Palindrome." << endl;
+    cout << "Not a Palindrome." << endl;
   } 
  return 0;
 }
