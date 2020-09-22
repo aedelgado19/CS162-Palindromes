@@ -1,11 +1,12 @@
 /* Author: Allison Delgado
- * Last updated 9/21/20
+ * Last updated 9/22/20
  * Palindromes is a program that reads in a character array
  * and determines whether or not this is a palindrome.
  */
 
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int isValid(char ch); 
